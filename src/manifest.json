@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Extension Study",
+  "version": "0.1.0",
+  "description": "Extension made for studying purposes",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"]
+}
