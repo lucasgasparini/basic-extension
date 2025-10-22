@@ -1,12 +1,13 @@
 "use strict";
 
-console.log("Hello, popup!");
+console.log("Hello, world from popup!");
 
 function setBadgeText(enabled) {
   const text = enabled ? "ON" : "OFF";
-  chrome.actions.setBadgeText({ text: text });
+  void chrome.action.setBadgeText({ text: text });
 }
 
+// Handle the ON/OFF switch
 const checkbox = document.getElementById("enabled");
 chrome.storage.sync.get("enabled", (data) => {
   checkbox.checked = !!data.enabled;
@@ -19,6 +20,7 @@ checkbox.addEventListener("change", (event) => {
   }
 });
 
+// Handle the input field
 const input = document.getElementById("item");
 chrome.storage.sync.get("item", (data) => {
   input.value = data.item || "";
